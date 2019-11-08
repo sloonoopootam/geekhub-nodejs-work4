@@ -6,8 +6,10 @@ let spiralMatrix = (R, C, r0, c0) => {
     const coords = {x: r0, y: c0};
     const result = [[r0, c0]];
 
-    if (R * C === 1) {
-        return result
+    if (R < 1 || R > 100 || C < 1 || C > 100) {
+        console.error('R, C are not belong to the segment from 1 to 100');
+    } else if (R * C === 1) {
+        return result;
     } else {
         for (let k = 1; k < 2 * (R + C) && result.length < (R * C); k += 2) {
             for (let i = 0; i < 4; i++) {
