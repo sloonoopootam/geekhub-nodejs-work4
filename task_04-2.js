@@ -11,7 +11,7 @@ let spiralMatrix = (R, C, r0, c0) => {
     } else {
         for (let k = 1; k < 2 * (R + C) && result.length < (R * C); k += 2) {
             for (let i = 0; i < 4; i++) {
-                let dk = k + i / 2 - 1 / 2;
+                let dk = Math.floor(k + i / 2);
                 for (let j = 0; j < dk; j++) {
                     coords.x += dr[i];
                     coords.y += dc[i];
