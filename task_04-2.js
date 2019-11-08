@@ -9,9 +9,9 @@ let spiralMatrix = (R, C, r0, c0) => {
     if (R * C === 1) {
         return result
     } else {
-        for (let k = 1; k < 2 * (R + C) && result.length <= (R * C); k += 2) {
+        for (let k = 1; k < 2 * (R + C) && result.length < (R * C); k += 2) {
             for (let i = 0; i < 4; i++) {
-                let dk = k + i / 2;
+                let dk = k + i / 2 - 1 / 2;
                 for (let j = 0; j < dk; j++) {
                     coords.x += dr[i];
                     coords.y += dc[i];
@@ -21,11 +21,12 @@ let spiralMatrix = (R, C, r0, c0) => {
                 }
             }
         }
+        return result;
     }
-    return result;
 };
 
-// let res1 = spiralMatrix(1, 4, 0, 0);
-// console.log(res1);
+let res1 = spiralMatrix(1, 4, 0, 0);
+    console.table(res1);
+
 let res2 = spiralMatrix(5, 6, 1, 4);
-    console.log(res2);
+    console.table(res2);
