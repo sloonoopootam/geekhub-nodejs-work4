@@ -11,13 +11,13 @@ let pow = (argument, power) => {
         if (n === 0) {
             return 1;
         } else if (n < 0) {
-            return n === -1 ? 1 / x : 1 / (x * pow(x, -n - 1));
+            return (n === -1 ? 1 / x : 1 / (x * pow(x, -n - 1))).toFixed(5);
         } else {
-            return n === 1 ? x : x * pow(x, n - 1);
+            return (n === 1 ? x : x * pow(x, n - 1)).toFixed(5);
         }
     }
 };
 
-console.log(pow(2.0, 10));
-console.log(pow(2.1, 3));
-console.log(pow(2.0, -2));
+console.log(pow(2.00000, 10));
+console.log(pow(2.10000, 3));
+console.log(pow(2.00000, -2));
